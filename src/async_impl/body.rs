@@ -49,7 +49,7 @@ pin_project! {
 
 /// Converts any `impl Body` into a `impl Stream` of just its DATA frames.
 #[cfg(any(feature = "stream", feature = "multipart",))]
-pub(crate) struct DataStream<B>(pub(crate) B);
+pub struct DataStream<B>(pub(crate) B);
 
 impl Body {
     /// Returns a reference to the internal data of the `Body`.
