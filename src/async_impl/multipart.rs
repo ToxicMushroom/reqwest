@@ -193,7 +193,7 @@ impl Form {
             .chain(stream::once(future::ready(Ok("\r\n".into()))))
     }
 
-    pub(crate) fn compute_length(&mut self) -> Option<u64> {
+    pub fn compute_length(&mut self) -> Option<u64> {
         self.inner.compute_length()
     }
 
