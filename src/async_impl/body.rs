@@ -175,12 +175,12 @@ impl Body {
     }
 
     #[cfg(feature = "multipart")]
-    pub(crate) fn into_stream(self) -> DataStream<Body> {
+    pub fn into_stream(self) -> DataStream<Body> {
         DataStream(self)
     }
 
     #[cfg(feature = "multipart")]
-    pub(crate) fn content_length(&self) -> Option<u64> {
+    pub fn content_length(&self) -> Option<u64> {
         match self.inner {
             Inner::Reusable(ref bytes) => Some(bytes.len() as u64),
             Inner::Streaming(ref body) => body.size_hint().exact(),

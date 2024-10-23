@@ -140,7 +140,7 @@ impl Form {
     }
 
     /// Consume this instance and transform into an instance of Body for use in a request.
-    pub(crate) fn stream(mut self) -> Body {
+    pub fn stream(mut self) -> Body {
         if self.inner.fields.is_empty() {
             return Body::empty();
         }
